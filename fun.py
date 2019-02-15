@@ -31,3 +31,57 @@ print(numJudge())
 
 
 #4. 某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下： 每位数字都加上5,然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。编写加密的函数与解密的函数。
+NUMDATA = []
+
+def numInput():
+	numInput = input("please enter number:");
+	if(len(str(numInput)) > 3):
+		return "只填写四位整数哦~"
+	return NUMDATA = numHandled
+
+
+def encode(numData):   
+    numStr = str(numData)
+    i1 = numStr[0]
+    i2 = numStr[1]
+    i3 = numStr[2]
+    i4 = numStr[3]
+    
+    str1 = divmod((int(i4) + 5),10)[1]
+    str2 = divmod((int(i3) + 5),10)[1]
+    str3 = divmod((int(i2) + 5),10)[1]
+    str4 = divmod((int(i1) + 5),10)[1]
+ 
+    res = str(str1)+str(str2)+str(str3)+str(str4)
+    return int(res)
+    
+ 
+def decode(numData):
+    numStr = str(numData)
+    i1 = numStr[0]
+    i2 = numStr[1]
+    i3 = numStr[2]
+    i4 = numStr[3]
+    
+    str1 = trans(i4)
+    str2 = trans(i3)
+    str3 = trans(i2)
+    str4 = trans(i1)
+    
+    res = str(str1)+str(str2)+str(str3)+str(str4)
+    return int(res)
+    
+def trans(i):
+    num = int(i)
+    if (num >= 5):
+       return num - 5
+    if (num < 5):
+       return num + 10 - 5
+
+numInput()
+
+v1 = encode(NUMDATA)
+print(v1)
+ 
+v2 = decode(v1)
+print(v2)
