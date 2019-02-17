@@ -33,18 +33,9 @@ rand_data = np.random.normal(mu, sigma, num)
 print("mean =", np.mean(rand_data))
 print("standard error =", np.std(rand_data))
 
-
-# import matplotlib  
-# matplotlib.use('TkAgg')   
-# import matplotlib.pyplot as plt
-# sampleNo = 100
-
-# mu = 3
-# sigma = 0.1
-# np.random.seed(0)
-# s = np.random.normal(mu, sigma, sampleNo )
-# plt.subplot(141)
-# plt.hist(s, 30, normed=True)
-
-# print("mean =", np.mean(s))
-# print("standard error =", np.std(s))
+#RuntimeError: Python is not installed as a framework. The Mac OS X backend will not be able to function correctly if Python is not installed as a framework. See the Python documentation for more information on installing Python as a framework on Mac OS X. Please either reinstall Python as a framework, or try one of the other backends.
+#以上报错的解决办法地址https://github.com/tensorflow/tensorflow/issues/2375
+#解决代码：
+#import matplotlib  
+#matplotlib.use('TkAgg')   
+#import matplotlib.pyplot as plt
