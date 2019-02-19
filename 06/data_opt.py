@@ -16,6 +16,11 @@ new_dj=df1['New_Values'].groupby(df1['new_dj'])
 # print(new_dj.median())  #等距等量求中位数
 # print(new_dj.std())  #等距等量求标准差
 
+import pandas as pd
+
+#1. 读入  肝气郁结证型系数.xls  数据集，将数据集按照等距、小组等量 两种方式 分别分为5组数据，分别计算5组数据的中位数与标准差
+inputFile1 = '肝气郁结证型系数.xls'
+data1 = pd.read_excel(inputfile1)
 
 #2. 读入BHP1.csv，使用适当的方法填补缺失值
 from scipy.interpolate import lagrange
