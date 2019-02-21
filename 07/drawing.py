@@ -15,12 +15,12 @@ import matplotlib.pyplot as plt
 # 2. 画出realgdp列与realcons列的散点图，初步判断两个变量之间的关系
 macro = pd.read_csv('macrodata.csv')
 data2 = macro[['realgdp', 'realcons']]
-trans_data = np.log(data).diff().dropna()
+trans_data = np.log(data2).diff().dropna()
 trans_data[-5:]
 
 plt.figure()
-plt.scatter(data2['realgdp'], data2['realcons'])
-pd.scatter_matrix(data2, diagonal='kde', color='k', alpha=0.3)
+plt.scatter(trans_data['realgdp'], trans_data['realcons'])
+pd.scatter_matrix(trans_data, diagonal='kde', color='k', alpha=0.3)
 plt.show()
 
 # 对tips数据集
