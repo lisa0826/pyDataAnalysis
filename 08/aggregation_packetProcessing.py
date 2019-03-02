@@ -1,18 +1,27 @@
 # -*- coding: utf-8 -*-
-import pandas as pd
 import numpy as np
+from pandas import Series, DataFrame
+import pandas as pd
 
 # 读入tips.csv 数据集
-data=pd.read_csv("tips.csv")
-
-dataTip = data['tip']
+dataTip=pd.read_csv("tips.csv")
 
 # 1. 统计不同time的tip的均值，方差
-print(np.mean(dataTip))
-print(np.var(dataTip))
+grouped_time = dataTip.groupby(['time'])
+
+def peak_to_peak(arr):
+    return arr.max() - arr.min()
+grouped_time.agg(peak_to_peak)
+
+# print(grouped_time.agg('mean')['tip'])
+print(grouped_time.agg(['mean', 'std'])['tip'])
 
 # 2. 将total_bill和tip根据不同的sex进行标准化(原数据减去均值的结果除以标准差)
-dataTip = data['sex']
+dataTip['tip_pct'] = dataTip['tip'] / dataTip['total_bill']
+dataTip[:6]
+grouped = dataTip.groupby(['sex'])
+grouped_pct = grouped['tip_pct']
+# print(grouped_pct.agg('mean'))
 
 # 3. 计算吸烟者和非吸烟者的小费比例值均值  的差值
 
