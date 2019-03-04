@@ -33,10 +33,8 @@ def peak_to_peak(arr):
 
 
 # 4. 对sex与size聚合，统计不同分组的小费比例的标准差、均值，将该标准差与均值添加到原数据中
-getData = dataTip.groupby(['sex','size'])['tip_pct'].agg(['mean','std'])
-print(dataTip,'/n',getData)
-newData = DataFrame({dataTip,gatData})
-print(newData)
+oldData = dataTip.groupby(['sex','size']).agg(['mean','std'])
+print(oldData)
 
 # 5. 对time和size聚合，画出total_bill 的饼图
 
