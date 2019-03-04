@@ -39,15 +39,15 @@ tips[:6]
 
 grouped = tips.groupby(['sex', 'smoker'])
 grouped_pct = grouped['tip_pct']
-print(grouped_pct.agg('mean'))
+# print(grouped_pct.agg('mean'))
 
-print(grouped_pct.agg(['mean', 'std', peak_to_peak]))
+# print(grouped_pct.agg(['mean', 'std', peak_to_peak]))
 
-print(grouped_pct.agg([('foo', 'mean'), ('bar', np.std)]))
+# print(grouped_pct.agg([('foo', 'mean'), ('bar', np.std)]))
 
 functions = ['count', 'mean', 'max']
 result = grouped['tip_pct', 'total_bill'].agg(functions)
-print(result)
+# print(result)
 
 result['tip_pct']
 
@@ -58,3 +58,14 @@ grouped.agg({'tip' : np.max, 'size' : 'sum'})
 
 grouped.agg({'tip_pct' : ['min', 'max', 'mean', 'std'],
              'size' : 'sum'})
+
+# ##数据聚合
+df
+
+grouped1 = df.groupby('key1')
+grouped1['data1']
+
+def peak_to_peak(arr):
+    return arr.max() - arr.min()
+grouped1.agg(peak_to_peak)
+print(grouped1.describe())
