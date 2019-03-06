@@ -163,21 +163,105 @@ while 判断条件：
 # print("Good bye!")
 
 #时间与日期
-import time;  # This is required to include time module.
+# import time;  # This is required to include time module.
 
-ticks = time.time()
-print("Number of ticks since 12:00am, January 1, 1970:", ticks)
+# ticks = time.time()
+# print("Number of ticks since 12:00am, January 1, 1970:", ticks)
 
-localtime = time.localtime(time.time())
-print("Local current time :", localtime)
+# localtime = time.localtime(time.time())
+# print("Local current time :", localtime)
 
-localtime = time.asctime( time.localtime(time.time()) )
-print("Local current time :", localtime)
+# localtime = time.asctime( time.localtime(time.time()) )
+# print("Local current time :", localtime)
 
-import calendar
+# import calendar
 
-cal = calendar.month(2008, 1)
-print("Here is the calendar:")
-print(cal);
+# cal = calendar.month(2008, 1)
+# print("Here is the calendar:")
+# print(cal);
+
+#函数调用
+# def printme( str ):
+#    "打印传入的字符串到标准显示设备上"
+#    print(str)
+#    return
+
+# #函数调用
+# printme("我要调用用户自定义函数!");
+# printme("再次调用同一函数");
+
+# 可写函数说明
+# def changeme(mylist):
+# 	"修改传入的列表"
+# 	mylist.append([1,2,3,4]);
+# 	print("函数内取值：",mylist)
+# 	return
+
+# mylist = [10,20,30];
+# changeme(mylist);
+# print("函数外取值：",mylist)
+
+#定义函数
+# def printinfo( name, age ):
+#    "打印任何传入的字符串"
+#    print("Name: ", name)
+#    print("Age ", age)
+#    return;
+ 
+# #调用函数
+# printinfo( age=50, name="miki" ); #python内函数参数的位置可以不用对应
+
+# def printinfo( arg1, *vartuple ):
+#    "打印任何传入的参数"
+#    print("输出: ")
+#    print(arg1)
+#    for var in vartuple:
+#       print(var)
+#    return;
+ 
+# # 调用printinfo 函数
+# printinfo( 10 );
+# printinfo( 70, 60, 50 );
+
+#匿名函数
+'''
+lambda [arg1 [,arg2,.....argn]]:expression
+'''
+
+# sum = lambda arg1, arg2: arg1 + arg2;
+# # 调用sum函数
+# print("相加后的值为 : ", sum( 10, 20 ))
+# print("相加后的值为 : ", sum( 20, 20 ))
+
+
+# return语句
+# def sum( arg1, arg2 ):
+#    total = arg1 + arg2
+#    print("函数内 : ", total)
+#    return total;
+ 
+# 调用sum函数
+# total = sum( 10, 20 );
+# print("函数外 : ", total)
+
+
+#变量的作用范围
+# total = 0; # 这是一个全局变量
+# # 可写函数说明
+# def sum( arg1, arg2 ):
+#    #返回2个参数的和."
+#    total = arg1 + arg2; # total在这里是局部变量.
+#    print("函数内是局部变量 : ", total)
+#    return total;
+ 
+# #调用sum函数
+# sum( 10, 20 );
+# print("函数外是全局变量 : ", total)
+
+
+
+
+
+
 
 
