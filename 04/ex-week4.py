@@ -85,18 +85,38 @@ bools = np.array([False, False, True, False])
 # print(arr)
 
 #唯一化以及其他的集合逻辑
-# names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
-# print(np.unique(names))
-# ints = np.array([3, 3, 3, 2, 2, 1, 1, 4, 4])
-# print(np.unique(ints))
+# 8
 
-# print(sorted(set(names)))
-
-values = np.array([6, 0, 0, 3, 2, 5, 6])
-print(np.in1d(values, [2, 3, 6]))
+# values = np.array([6, 0, 0, 3, 2, 5, 6])
+# print(np.in1d(values, [2, 3, 6]))
 
 
+##线性代数
+# x = np.array([[1.,2.,3.],[4.,5.,6.]])
+# y = np.array([[6.,23.],[-1,7],[8,9]])
 
+# print(x,y)
+# print(x.dot(y))
+
+# print(np.random.seed(12345))
+
+# from numpy.linalg import inv, qr
+# X = randn(5, 5)
+# print(X)
+# mat = X.T.dot(X)
+# print(mat)
+# print(inv(mat))
+# print(mat.dot(inv(mat)))
+# q, r = qr(mat)
+# print(r)
+
+##随机数生成
+samples = np.random.normal(size=(4, 4))
+
+from random import normalvariate
+N = 1000000
+get_ipython().magic(u'timeit samples = [normalvariate(0, 1) for _ in xrange(N)]')
+get_ipython().magic(u'timeit np.random.normal(size=N)')
 
 
 
